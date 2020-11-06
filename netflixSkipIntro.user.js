@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NetflixSkipIntro
 // @namespace    http://netflix.com/
-// @version      0.4
+// @version      0.5
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/netflixSkipIntro.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/netflixSkipIntro.user.js
 // @description  Netflix skip intro on space
@@ -13,7 +13,7 @@
 (function() {
     'use strict';
 
-    // on space hit script skip the intro
+    // on space click script skip the intro
     document.addEventListener('keydown', (event) => {
         const skipButton = document.getElementsByClassName('skip-credits')[0];
         if (((event.key === ' ') || (event.key === 'Spacebar')) && (skipButton != null)) {
