@@ -2,8 +2,8 @@
 // @name         NetflixSkipIntro
 // @namespace    http://netflix.com/
 // @version      0.2
-// @updateURL    https://github.com/kamkow10/TampermonkeyScripts/netflixSkipIntro.user.js
-// @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/netflixSkipIntro.user.js
+// @updateURL    https://github.com/kamkow10/TampermonkeyScripts/blob/main/netflixSkipIntro.user.js
+// @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/blob/main/netflixSkipIntro.user.js
 // @description  Netflix skip intro on space
 // @author       Kamil Kowalczyk
 // @match        https://www.netflix.com/*
