@@ -1,0 +1,80 @@
+// ==UserScript==
+// @name         OLX-Helper
+// @namespace    http://olx.pl/
+// @version      0.1
+// @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
+// @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
+// @description  Script to help search key words in olx flat page
+// @author       Kamil Kowalczyk
+// @match        https://www.olx.pl/d/oferta/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    let wordsMatches = [
+        {
+            word: 'Październik',
+            matches: ['październik', 'pazdziernik', 'pazdz', 'paźdz', '1/10', '1.10', '1 10', '1.10.2021', '01.10.2021']
+        },
+        {
+            word: 'Zmywarka',
+            matches: ['zmywarka', 'zmywarkę', 'zmywarke', 'zmywarkom', 'zmywarką']
+        },
+        {
+            word: 'Balkon',
+            matches: ['balkon', 'balkonu', 'balk']
+        },
+        {
+            word: 'Coś o zwierzętach',
+            matches: ['zwierzeta', 'zwierz']
+        },
+    ]
+
+    const descElement = document.getElementsByClassName('css-g5mtbi-Text').item(0);
+    if (descElement) {
+        createHelper(wordsMatches, descElement.innerText);
+    } else {
+        console.error('cannot find OLX description container by class name');
+    }
+
+
+})();
+
+function createHelper(wordsMatches, text) {
+    const helper = document.createElement('div');
+    helper.style = `
+    padding: 20px;
+    border: 2px solid black;
+    background-color: #eee;
+    font-size: 20px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 250px;
+    margin: 0;
+    z-index: 3000000000;
+  `;
+    let helperContent = [];
+    wordsMatches.forEach((wordMatches) => {
+        let count = 0;
+        wordMatches.matches.forEach((match) => {
+            if (text.toLowerCase().includes(match)) {
+                count += 1;
+            }
+        });
+        helperContent.push({'word': wordMatches.word, 'exists': count > 0});
+    });
+    helper.innerHTML = '';
+    helperContent.forEach((content) => {
+        helper.innerHTML += `
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dotted grey; padding: 10px;">
+                ${content.word}
+                <input type="checkbox" ${(content.exists ? 'checked >' : '>')}
+            </div>
+        `
+    })
+    document.body.appendChild(helper);
+}
+
