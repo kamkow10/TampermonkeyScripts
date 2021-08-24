@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OLX-Helper
 // @namespace    http://olx.pl/
-// @version      0.1
+// @version      0.1.1
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @description  Script to help search key words in olx flat page
@@ -24,7 +24,7 @@
         },
         {
             word: 'Balkon',
-            matches: ['balkon', 'balkonu', 'balk']
+            matches: ['balkon', 'balkonu', 'balk', 'taras', 'tarasem', 'tarasu']
         },
         {
             word: 'Coś o zwierzętach',
@@ -71,7 +71,7 @@ function createHelper(wordsMatches, text) {
         helper.innerHTML += `
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dotted grey; padding: 10px;">
                 ${content.word}
-                <input type="checkbox" ${(content.exists ? 'checked >' : '>')}
+                <input type="checkbox" style="width: 20px; height: 20px" ${(content.exists ? 'checked >' : '>')}
             </div>
         `
     })
