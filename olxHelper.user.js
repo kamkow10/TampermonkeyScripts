@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OLX-Helper
 // @namespace    http://olx.pl/
-// @version      0.1.1
+// @version      0.1.2
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @description  Script to help search key words in olx flat page
@@ -17,6 +17,14 @@
         {
             word: 'Październik',
             matches: ['październik', 'pazdziernik', 'pazdz', 'paźdz', '1/10', '1.10', '1 10', '1.10.2021', '01.10.2021']
+        },
+        {
+            word: 'Wrzesień',
+            matches: ['wrzesien', 'wrzesień', 'wrzes', '1/09', '1.09', '1 09', '1.09.2021']
+        },
+        {
+            word: 'Od zaraz',
+            matches: ['od zaraz', 'od teraz']
         },
         {
             word: 'Zmywarka',
@@ -48,7 +56,7 @@ function createHelper(wordsMatches, text) {
     padding: 20px;
     border: 2px solid black;
     background-color: #eee;
-    font-size: 20px;
+    font-size: 18px;
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -70,7 +78,7 @@ function createHelper(wordsMatches, text) {
     helperContent.forEach((content) => {
         helper.innerHTML += `
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dotted grey; padding: 10px;">
-                ${content.word}
+                <div style="margin-right: 15px;">${content.word}</div>
                 <input type="checkbox" style="width: 20px; height: 20px" ${(content.exists ? 'checked >' : '>')}
             </div>
         `
