@@ -77,9 +77,9 @@ function createHelper(wordsMatches, text) {
     helper.innerHTML = '';
     helperContent.forEach((content) => {
         helper.innerHTML += `
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dotted grey; padding: 10px;">
-                <div style="margin-right: 15px;">${content.word}</div>
+            <div style="display: flex; align-items: center; border-bottom: 1px dotted grey; padding: 10px;">
                 <input type="checkbox" style="width: 20px; height: 20px" ${(content.exists ? 'checked >' : '>')}
+                <div style="margin-left: 15px;">${content.word}</div>
             </div>
         `
     })
