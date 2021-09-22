@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OLX-Helper
 // @namespace    http://olx.pl/
-// @version      0.1.3
+// @version      0.2
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @description  Script to help search key words in olx flat page
@@ -15,12 +15,16 @@
 
     let wordsMatches = [
         {
+            word: 'Informacja o terminie',
+            matches: ['dostępne od', 'dostepne od', 'wolne od', 'wolne jest od', 'zamieszkania od']
+        },
+        {
             word: 'Październik',
             matches: ['październik', 'pazdziernik', 'pazdz', 'paźdz', '1/10', '1.10', '1 10', '1.10.2021', '01.10.2021']
         },
         {
-            word: 'Wrzesień',
-            matches: ['wrzesien', 'wrzesień', 'wrzes', '1/09', '1.09', '1 09', '1.09.2021']
+            word: 'Listopad',
+            matches: ['listo', '1/11', '1.11', '1 11']
         },
         {
             word: 'Od zaraz',
@@ -28,7 +32,7 @@
         },
         {
             word: 'Zmywarka',
-            matches: ['zmywarka', 'zmywarkę', 'zmywarke', 'zmywarkom', 'zmywarką']
+            matches: ['zmywarka', 'zmywarkę', 'zmywarke', 'zmywarkom', 'zmywarką', 'zmywarkom']
         },
         {
             word: 'Balkon',
