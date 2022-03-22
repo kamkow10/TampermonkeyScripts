@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OLX-Helper
 // @namespace    http://olx.pl/
-// @version      0.2
+// @version      0.3
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @description  Script to help search key words in olx flat page
@@ -41,6 +41,14 @@
         {
             word: 'Coś o zwierzętach',
             matches: ['zwierzeta', 'zwierz']
+        },
+        {
+            word: '-------------------',
+            matches: []
+        },
+        {
+            word: 'Formalności adopcyjne',
+            matches: ['funda', 'proces adopcyjny', 'procesu adopcyjnego', 'podpisanie', 'umowy', 'umowa', 'wyprawka', 'wyprawke', 'wyprawkę', 'ankieta', 'ankiete', 'ankietę', 'teren poznania', 'terenie poznania']
         },
     ]
 
