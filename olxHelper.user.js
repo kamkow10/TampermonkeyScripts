@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OLX-Helper
 // @namespace    http://olx.pl/
-// @version      0.3.1
+// @version      0.4
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/olxHelper.user.js
 // @description  Script to help search key words in olx flat page
