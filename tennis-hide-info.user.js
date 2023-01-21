@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tennis Hide Info
 // @namespace    https://player.pl/
-// @version      0.2
+// @version      0.3
 // @updateURL    https://github.com/kamkow10/TampermonkeyScripts/raw/main/tennis-hide-info.user.js
 // @downloadURL  https://github.com/kamkow10/TampermonkeyScripts/raw/main/tennis-hide-info.user.js
 // @description  Script to hide match time
